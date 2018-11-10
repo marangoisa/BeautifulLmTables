@@ -1,6 +1,6 @@
 # BeautifulLmTables
-Creates matrices with results from a set of linear regressions
-Maintainer: Mauricio Arango
+#Creates matrices with results from a set of linear regressions
+#Maintainer: Mauricio Arango
 result_mat(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec)
 form: list with formulas
 datav: data for regressions
