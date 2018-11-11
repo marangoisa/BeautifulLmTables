@@ -13,8 +13,8 @@
 #@dec: number of decimals in the table
 
 lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
-  if(!require(sandwich, quietly = TRUE)){install.packages(sandwich,dep = TRUE,quietly = TRUE)}
-  if(!require(lmtest, quietly = TRUE)){install.packages(lmtes,dep = TRUE,quietly = TRUE)}
+  if(!require(sandwich, quietly = TRUE)){install.packages('sandwich',dep = TRUE,quietly = TRUE)}
+  if(!require(lmtest, quietly = TRUE)){install.packages('lmtes',dep = TRUE,quietly = TRUE)}
   if(!missing(clst)){rbst<-TRUE}
   if(missing(dec)){dec<-2}
   if(missing(stars)){stars=FALSE}
