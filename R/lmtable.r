@@ -52,7 +52,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   datav$w<-NULL
   results$matrix<-mat
   ltx<-print(xtable(mat))
-  for(i in 1:(length(namesrowv)+1)){aaa<-gsub(paste0("X..",i),' ',ltx)}
-  ltx<-gsub(paste0('X.',i),'',ltx[[1]])
+  for(i in 1:(length(namesrowv)+1)){aaa<-gsub(paste0("X..",i),' ',ltx[[1]])}
+  ltx<-gsub('X.','',ltx[[1]])
   results$latex<-ltx
   return(results)}
