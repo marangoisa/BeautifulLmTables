@@ -44,13 +44,12 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
     j=j+1}
   namesrowv<-c('Constant')
   for(ii in 1:length(namesrow)){namesrowv<-c(namesrowv,' ',namesrow[ii])}
-  namesrowv<-c(namesrowv,' ',"Adjusted R-squared','Number observations)
+  namesrowv<-c(namesrowv,' ','Adjusted R-squared','Number observations')
   namescolv<-c()
   if(stars){for(iii in 1:length(namescol)){namescolv<-c(namescolv,namescol[iii],' ')}}else{namescolv<-namescol}
   rownames(mat)<-namesrowv
   colnames(mat)<-namescolv
   datav$w<-NULL
   results$matrix<-mat
-  ltx<-xtable(mat)
-  results$latex<-ltx
+  results$latex<-xtable(mat)
   return(results)}
