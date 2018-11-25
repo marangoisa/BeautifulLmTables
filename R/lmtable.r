@@ -36,7 +36,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
     aaa<-format(round(coefsa[(nr*3+1):(nr*4)],2),nsmall=2)
     aab<-aaa
     for(ii in 1:length(aaa)){if(aaa[ii]<0.001){aab[ii]<-"***"}else{if(0.001<aaa[ii]&aaa[ii]<0.01){aab[ii]<-"**"}else{if(0.01<aaa[ii]&aaa[ii]<0.05){aab[ii]<-"*"}else{if(0.05<aaa[ii]&aaa[ii]<0.1){aab[ii]<-"."}else{aab[ii]<-" "}}}}}
-    mat[(seq(2,(nr*2),2)),i]<-paste0('('format(round(coefsa[(nr+1):(nr*2)],dec),nsmall=2),')')
+    mat[(seq(2,(nr*2),2)),i]<-paste0('(',format(round(coefsa[(nr+1):(nr*2)],dec),nsmall=2),')')
     mat[(reg-1),i]<-format(round(summary(regi)$adj.r.squared,dec),nsmall=2)
     mat[(reg),i]<-summary(regi)$df[[2]]+summary(regi)$df[[1]]
     if(stars){mat[(seq(1,(nr*2),2)),i+1]<-aab
