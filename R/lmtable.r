@@ -24,7 +24,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   nc=length(form)
   reg=(length(namesrow))*2+4
   if(stars){nncol=(nc*2)}else{nncol=nc}
-  mat <- matrix(" ", nrow = (reg), ncol=nncol)
+  mat <- matrix(" ", nrow = (reg)+1, ncol=nncol)
   colnm<-c(1:nncol)
   for(i in 1:nncol){colnm[i]<-paste0('(',colnm[i],')')}
   mat[1,]<-colnm
