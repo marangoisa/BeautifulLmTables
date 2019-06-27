@@ -28,19 +28,18 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   colnm<-c(1:nncol)
   for(i in 1:nncol){colnm[i]<-paste0('(',colnm[i],')')}
   mat[1,]<-colnm
-  #i=1
-  i=2
+  i=1
   j=1
   #estimate
   while(j<=length(form)){
     if(!missing(wgh)){regi<-lm(form[[j]],data=datav,weights=w)}else{regi<-lm(form[[j]],data=datav)}
     if(!missing(rbst)){if(!missing(clst)){coefsa<-coeftest(regi, vcov = vcovCL(regi, cluster =clst))}else{coefsa<-coeftest(regi, vcov = vcovCL(regi))}}else{coefsa<-summary(regi)$coefficients}
     nr<-nrow(coefsa)
-    mat[(seq(1,(nr*2),2)),i]<-format(round(coefsa[1:nr],dec),nsmall=2)
+    mat[(seq(2,(nr*2),2)),i]<-format(round(coefsa[1:nr],dec),nsmall=2)
     aaa<-format(round(coefsa[(nr*3+1):(nr*4)],2),nsmall=2)
     aab<-aaa
     for(ii in 1:length(aaa)){if(aaa[ii]<0.001){aab[ii]<-"***"}else{if(0.001<aaa[ii]&aaa[ii]<0.01){aab[ii]<-"**"}else{if(0.01<aaa[ii]&aaa[ii]<0.05){aab[ii]<-"*"}else{if(0.05<aaa[ii]&aaa[ii]<0.1){aab[ii]<-"."}else{aab[ii]<-" "}}}}}
-    mat[(seq(2,(nr*2),2)),i]<-paste0('(',format(round(coefsa[(nr+1):(nr*2)],dec),nsmall=2),')')
+    mat[(seq(3,(nr*2),2)),i]<-paste0('(',format(round(coefsa[(nr+1):(nr*2)],dec),nsmall=2),')')
     mat[(reg-1),i]<-format(round(summary(regi)$adj.r.squared,dec),nsmall=2)
     mat[(reg),i]<-summary(regi)$df[[2]]+summary(regi)$df[[1]]
     if(stars){mat[(seq(1,(nr*2),2)),i+1]<-aab
