@@ -51,7 +51,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   for(ii in 1:length(namesrow)){
     namesrowv<-c(namesrowv,spacer,namesrow[ii])
     spacer<-paste0(spacer,' ')}
-  namesrowv<-c(namesrowv,' ','Adjusted R-squared','Number observations')
+  namesrowv<-c(namesrowv,spacer,'Adjusted R-squared','Number observations')
   namescolv<-c()
   if(stars){for(iii in 1:length(namescol)){namescolv<-c(namescolv,namescol[iii],' ')}}else{namescolv<-namescol}
   rownames(mat)<-namesrowv
