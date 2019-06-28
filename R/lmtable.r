@@ -25,6 +25,8 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   reg=(length(namesrow))*2+4
   if(stars){nncol=(nc*2)}else{nncol=nc}
   mat <- matrix(" ", nrow = (reg), ncol=nncol)
+  colnm<-c(' ',1:nncol)
+  for(i in 2:length(colnm)){colnm[i]<-paste0('(',colnm[i],')')}
   i=1
   j=1
   #estimate
@@ -42,7 +44,8 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
     if(stars){mat[(seq(1,(nr*2),2)),i+1]<-aab
     i=i+2}else{i=i+1}
     j=j+1}
-  namesrowv<-c('Constant')
+  mat<- rbind(colnm,mat)  
+  namesrowv<-c(' ','Constant')
   for(ii in 1:length(namesrow)){namesrowv<-c(namesrowv,' ',namesrow[ii])}
   namesrowv<-c(namesrowv,' ','Adjusted R-squared','Number observations')
   namescolv<-c()
