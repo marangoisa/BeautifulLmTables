@@ -29,6 +29,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   for(i in 2:length(colnm)){colnm[i]<-paste0('(',colnm[i],')')}
   i=1
   j=1
+  HPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPSSSSSSSSSSSSS
   #estimate
   while(j<=length(form)){
     if(!missing(wgh)){regi<-lm(form[[j]],data=datav,weights=w)}else{regi<-lm(form[[j]],data=datav)}
