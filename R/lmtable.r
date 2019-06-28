@@ -25,8 +25,8 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
   reg=(length(namesrow))*2+4
   if(stars){nncol=(nc*2)}else{nncol=nc}
   mat <- matrix(" ", nrow = (reg), ncol=nncol)
-  colnm<-c(1:nncol)
-  for(i in 1:nncol){colnm[i]<-paste0('(',colnm[i],')')}
+  #colnm<-c(1:nncol)
+  #for(i in 1:nncol){colnm[i]<-paste0('(',colnm[i],')')}
   #mat[1,]<-colnm
   i=1
   j=1
@@ -45,12 +45,14 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
     if(stars){mat[(seq(1,(nr*2),2)),i+1]<-aab
     i=i+2}else{i=i+1}
     j=j+1}
-  namesrowv<-c(' ','Constant')
-  spacer<-c('  ')
-  for(ii in 1:length(namesrow)){
-    namesrowv<-c(namesrowv,spacer,namesrow[ii])
-    spacer<-paste0(spacer,' ')}
-  namesrowv<-c(namesrowv,spacer,'Adjusted R-squared','Number observations')
+  namesrowv<-c('Constant')
+  #spacer<-c('  ')
+  for(ii in 1:length(namesrow)){namesrowv<-c(namesrowv,' ',namesrow[ii])}
+  #for(ii in 1:length(namesrow)){
+   # namesrowv<-c(namesrowv,spacer,namesrow[ii])
+    # spacer<-paste0(spacer,' ')}
+  namesrowv<-c(namesrowv,' ','Adjusted R-squared','Number observations')
+  #namesrowv<-c(namesrowv,spacer,'Adjusted R-squared','Number observations')
   namescolv<-c()
   if(stars){for(iii in 1:length(namescol)){namescolv<-c(namescolv,namescol[iii],' ')}}else{namescolv<-namescol}
   rownames(mat)<-namesrowv
