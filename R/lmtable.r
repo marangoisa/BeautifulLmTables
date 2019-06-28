@@ -44,6 +44,7 @@ lmtable<-function(form,datav,namescol,namesrow,stars,wgh,rbst,clst,dec){
     if(stars){mat[(seq(1,(nr*2),2)),i+1]<-aab
     i=i+2}else{i=i+1}
     j=j+1}
+  ggggggggggggggggggggggggggggggggggggggggggggggg!!!!!!!!!!!!!!!!!!!!!!!!!!888
   mat<- rbind(colnm,mat)  
   namesrowv<-c(' ','Constant')
   for(ii in 1:length(namesrow)){namesrowv<-c(namesrowv,' ',namesrow[ii])}
