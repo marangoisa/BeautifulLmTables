@@ -3,7 +3,8 @@ Title: Creates Elegant Regresion Tables
 Version: 1.0.0
 Authors@R: Mauricio Arango (http://mauricio-arango.com)
 Description: Organizes the results of one or many regressions into tables both in latex and matrix form.
-Depends: R (>= 3.5.0)
-License: What license is it under?
+Depends: R (>= 3.5.0), xtable, lmtest, sandwich
+Imports: xtable, lmtest, sandwich
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
